@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name="Packilog",
-    version="0.0.1",
+    version="0.0.2",
     author="Kenneth Wilke",
     author_email="kenneth.wilke@rackspace.com",
     packages=['libpackilog'],
