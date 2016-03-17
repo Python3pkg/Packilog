@@ -4,7 +4,7 @@ This document describes the format of the `packilog.json` manifest files. This f
 
 ## Top level object
 
-All Packilog manifest files should be valid JSON, with a JSON object as the root. Currently there are two supported members of this root object, `files` and `dependencies`.
+All Packilog manifest files should be valid JSON, with a JSON object as the root. Currently there are four supported members of this root object, `files`, `dependencies`, `tests` and `test_driver`.
 
 ```json
 {
@@ -20,7 +20,14 @@ All Packilog manifest files should be valid JSON, with a JSON object as the root
             "source": "http://awesome.verilog.source/somethingcool.sv",
             "filename": "somethingawesome.sv"
         }
-    ]
+    ],
+    "tests":
+    [
+        "test_something",
+        "test_everything"
+    ],
+    "test_driver": "vivado"
+}
 ```
 
 ## Files list
@@ -44,3 +51,11 @@ The `filename` member is the filename that the source code should be saved as.
 The `packageurl` type dependency pulls in a package from a remote URL. It requires a `source` object member.
 
 The `source` member is a URL path to a Packilog package, the dependency handler will look for a `packilog.json` manifest file relative to the path specified, then pull in code based on the contents of that manifest.
+
+## Tests
+
+The `tests` member is a list of test module names to use as a top module during simulation.
+
+## Test driver
+
+The `test_driver` member can be used to specify which test driver to use with this library, this can be overridden in the CLI.

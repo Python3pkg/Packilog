@@ -6,3 +6,6 @@ requirements.txt
 setup.py
 bin/packilog
 libpackilog/__init__.py
+libpackilog/pull.py
+libpackilog/test/__init__.py
+libpackilog/test/vivado.py

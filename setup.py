@@ -5,7 +5,7 @@ setup(
     version="0.0.2",
     author="Kenneth Wilke",
     author_email="kenneth.wilke@rackspace.com",
-    packages=['libpackilog'],
+    packages=['libpackilog', 'libpackilog.test'],
     scripts=['bin/packilog'],
     url='https://github.com/KennethWilke/Packilog',
     license='LICENSE.txt',
