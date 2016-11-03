@@ -38,7 +38,7 @@ def test(test_top):
 
 def cleanup():
     ''' Cleans up files from tests '''
-    subprocess.check_output(['rm -r webtalk*.log webtalk*.jou xsim*.jou ' +
-                             'xsim*.log xvlog.log xvlog.pb xsim.dir ' +
-                             'xelab.log xelab.pb'],
-                            shell=True)
+    print "Cleaning up simulation files."
+    subprocess.call(['rm -r webtalk*.log webtalk*.jou xsim*.jou xsim*.log ' + 
+                     'xvlog.log xvlog.pb xsim.dir xelab.log xelab.pb'],
+                    shell=True)

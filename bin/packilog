@@ -9,11 +9,15 @@ argparser = argparse.ArgumentParser(description="Pull in SystemVerilog code.")
 argparser.add_argument('-f', '--force', action='store_true')
 argparser.add_argument('-t', '--test', action='store_true')
 argparser.add_argument('-T', '--test-driver', type=str)
+argparser.add_argument('-i', '--install', help="Install package")
 
 args = argparser.parse_args()
 
 manifest = None
-if os.path.exists('packilog.json'):
+if args.install:
+    manifest = {"dependencies": [{"type": "packageurl",
+                                  "source": args.install}]}
+elif os.path.exists('packilog.json'):
     manifest = json.load(open('packilog.json'))
 else:
     print >> sys.stderr, "Error: packilog.json not found"
